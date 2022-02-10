@@ -1,0 +1,83 @@
+powershell
+Instalar Terminal preview
+Instalar powershell de la tienda de aplicaciones
+
+Instalar nerd fonts -> hacks
+https://github.com/ryanoasis/nerd-fonts/releases	
+
+Configurar apariencia de la Terminal
+Default Profile -> Powershell
+Default terminal application -> Windows Terminal preview
+-Appearance
+Show acrylic in tab row -> On
+Font face -> Hack
+Enable acrylic opacity -> On 50%
+-Editar one half dark en settings.json
+        {
+            "background": "#001B26",
+            "black": "#282C34",
+            "blue": "#61AFEF",
+            "brightBlack": "#5A6374",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#98C379",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#DCDFE4",
+            "brightYellow": "#E5C07B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#56B6C2",
+            "foreground": "#DCDFE4",
+            "green": "#98C379",
+            "name": "One Half Dark (Modded)",
+            "purple": "#C678DD",
+            "red": "#E06C75",
+            "selectionBackground": "#FFFFFF",
+            "white": "#DCDFE4",
+            "yellow": "#E5C07B"
+        },
+-Appearance
+Color scheme -> One Half Dark (Modded)
+
+Instalar scoop
+iwr -useb get.scoop.sh | sh
+o en su pagina de internet
+
+scoop install curl sudo jq
+
+Instalar Git
+winget install --id Git.Git -e --source winget
+
+scoop install neovim gcc
+
+Crear carpeta .config/powershell
+
+Make a user profile and command aliases
+nvim $PROFILE.CurrentUserCurrentHost
+-
+. $env:USERPROFILE\.config\powershell\profile.ps1
+-
+
+scoop install nvm
+nvm install 16.13.2
+
+Instalar Terminal-Icons
+Install-Module -Name Terminal-Icons -Repository PSGallery -Force
+Import-Module Terminal-Icons
+
+Instalar z Directory Jumber
+Install-Module -Name z -Force
+
+Instalar autocompletado
+Install-Module -Name PsReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+
+Instalar fzf
+scoop install fzf
+Install-Module -Name PSFzf -Scope CurrentUser -Force
+Set-PSFzfOption -PSReadlineChordProvider 'Ctrl-f' -PSReadlineChordReverseHistory 'Ctrl-r'
+
+Install oh my posh
+Install-Module posh-git -Scope CurrentUser -Force
+Install-Module oh-my-posh -Scope CurrentUser -Force
