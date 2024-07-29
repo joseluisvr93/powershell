@@ -8,7 +8,7 @@ Set-PoshPrompt Paradox
 
 #Load prompt config
 function Get-ScriptDirectory { Split-Path $MyInvocation.ScriptName }
-$PROMPT_CONFIG = Join-Path (Get-ScriptDirectory) 'pepe.omp.json'
+$PROMPT_CONFIG = Join-Path (Get-ScriptDirectory) 'velar.omp.json'
 oh-my-posh --init --shell pwsh --config $PROMPT_CONFIG | Invoke-Expression
 
 #Icons
