@@ -1,9 +1,29 @@
+Intalar everything
+
 powershell
 Instalar Terminal preview
 Instalar powershell de la tienda de aplicaciones
 
+Instalar choco
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+Instalar scoop
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
 Instalar nerd fonts -> hacks
-https://github.com/ryanoasis/nerd-fonts/releases	
+scoop bucket add nerd-fonts
+scoop install Hack-NF	
+
+Instalar
+scoop install curl sudo jq git zig gcc nvm
+nvm install 16.13.2
+instalar la ultima version
+
+sudo choco install mingw
+sudo choco install llvm
+Agregar path llvm
+
 
 Configurar apariencia de la Terminal
 Default Profile -> Powershell
@@ -62,17 +82,6 @@ Enable acrylic opacity -> On 50%
 -Appearance
 Color scheme -> One Half Dark (Modded)
 
-Instalar scoop
-iwr -useb get.scoop.sh | sh
-o en su pagina de internet
-
-scoop install curl sudo jq
-
-Instalar Git
-winget install --id Git.Git -e --source winget
-
-scoop install neovim gcc
-
 Crear carpeta .config/powershell
 
 Make a user profile and command aliases
@@ -80,9 +89,6 @@ nvim $PROFILE.CurrentUserCurrentHost
 -
 . $env:USERPROFILE\.config\powershell\profile.ps1
 -
-
-scoop install nvm
-nvm install 16.13.2
 
 Instalar Terminal-Icons
 Install-Module -Name Terminal-Icons -Repository PSGallery -Force
