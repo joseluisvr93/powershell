@@ -10,16 +10,20 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 Instalar scoop
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+scoop bucket add extras
 
 Instalar nerd fonts -> hacks
 scoop bucket add nerd-fonts
 scoop install Hack-NF	
 
 Instalar
-scoop install curl sudo jq git zig gcc nvm
+scoop install curl sudo jq git zig gcc nvm fd rga lazygit
 nvm install 16.13.2
 instalar la ultima version
+nvm use 16.13.2
 
+
+sudo choco install make
 sudo choco install mingw
 sudo choco install llvm
 Agregar path llvm
@@ -87,9 +91,10 @@ Crear carpeta .config/powershell
 Make a user profile and command aliases
 nvim $PROFILE.CurrentUserCurrentHost
 -
-. $env:USERPROFILE\.config\powershell\profile.ps1
+. $env:USERPROFILE\.config\powershell\user_profile.ps1
 -
 
+------- Si existe problemas agregar al path PSModule path
 Instalar Terminal-Icons
 Install-Module -Name Terminal-Icons -Repository PSGallery -Force
 Import-Module Terminal-Icons
@@ -108,5 +113,7 @@ Install-Module -Name PSFzf -Scope CurrentUser -Force
 Set-PSFzfOption -PSReadlineChordProvider 'Ctrl-f' -PSReadlineChordReverseHistory 'Ctrl-r'
 
 Install oh my posh
-Install-Module posh-git -Scope CurrentUser -Force
-Install-Module oh-my-posh -Scope CurrentUser -Force
+winget install JanDeDobbeleer.OhMyPosh -s winget
+
+
+npm install -g tree-sitter-cli
