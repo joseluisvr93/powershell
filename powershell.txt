@@ -64,7 +64,7 @@ Enable acrylic opacity -> On 50%
             "background": "#00141A",
             "black": "#00141A",
             "blue": "#278BD3",
-            "brightBlack": "#002D38",
+            "brightBlack": "#657b83",
             "brightBlue": "#47ADF5",
             "brightCyan": "#2BEEDE",
             "brightGreen": "#B7FA00",
@@ -82,7 +82,7 @@ Enable acrylic opacity -> On 50%
             "selectionBackground": "#FDF6E2",
             "white": "#EDE7D4",
             "yellow": "#B38600"
-        },
+        }
 -Appearance
 Color scheme -> One Half Dark (Modded)
 
