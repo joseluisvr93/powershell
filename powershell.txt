@@ -4,27 +4,32 @@ powershell
 Instalar Terminal preview
 Instalar powershell de la tienda de aplicaciones
 
-Instalar choco
+Instalar choco (Administrador)
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-Instalar scoop
+Instalar scoop(si estoy en empresa buscar cambiar carpeta)
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-scoop bucket add extras
+scoop install git
+--scoop bucket add extras
 
 Instalar nerd fonts -> hacks
 scoop bucket add nerd-fonts
 scoop install Hack-NF	
 
 Instalar
-scoop install curl sudo jq git zig gcc nvm fd rga lazygit
+scoop install curl sudo jq zig gcc nvm fd rga lazygit
 nvm install 16.13.2
 instalar la ultima version
 nvm use 16.13.2
 
 
-sudo choco install make
+sudo choco install make  
+scoop install make
+
 sudo choco install mingw
+scoop install mingw
+
 sudo choco install llvm
 Agregar path llvm
 
